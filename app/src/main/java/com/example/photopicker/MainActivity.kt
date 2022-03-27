@@ -27,6 +27,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         imageView = findViewById(R.id.my_image_view)
         imageView.setOnClickListener {
+
+            // Old way (pre Android 13)
+            // val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+            
             val intent = Intent(MediaStore.ACTION_PICK_IMAGES)
             startForResult.launch(intent)
         }
